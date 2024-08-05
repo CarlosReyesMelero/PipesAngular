@@ -18,14 +18,20 @@ export class MenuComponent {
               {
                 label: 'Textos y Fechas',
                 icon: 'pi pi-align-left',
+                routerLink: '/'
+                // url: 'http://localhost:4200/'
               },
               {
                 label: 'Numeros',
                 icon: 'pi pi-dollar',
+                // url: 'http://localhost:4200/numbers',
+                routerLink: 'numbers'
               },
               {
                 label: 'No comunes',
                 icon: 'pi pi-globe',
+                routerLink: 'uncommon',
+                // url: 'http://localhost:4200/uncommon'
               },
             ]
           },

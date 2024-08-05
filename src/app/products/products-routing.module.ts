@@ -1,3 +1,4 @@
+import { User } from './../../../../03-gifs-app/src/app/gifs/interfaces/gifs.interfaces';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
