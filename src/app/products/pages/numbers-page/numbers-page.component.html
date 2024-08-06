@@ -1,1 +1,32 @@
-<p>numbers-page works!</p>
+<p-panel header="Basics Numbers Pipes" class="p-1">
+  <h1>Pipes Numéricos Basicos</h1>
+</p-panel>
+
+
+<div class="grid">
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas netas" subheader="año actual">
+      {{totalSells | number}}
+    </p-card>
+  </div>
+
+  <!-- <div class="col-12 md:col-4">
+    <p-card header="Ventas brutas" subheader="año actual (redondeo)">
+      {{totalSells | number:'1.2-2'}}
+    </p-card>
+  </div> -->
+
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas brutas" subheader="año actual">
+      {{totalSells + 1234 | currency: 'EUR':'symbol-narrow'}}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Ganancias porcentual" subheader="año actual">
+      {{percent | percent:'1.2-2'}}
+    </p-card>
+  </div>
+
+
+</div>
