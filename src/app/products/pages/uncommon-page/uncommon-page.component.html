@@ -25,18 +25,48 @@
   </div>
 
   <div class="col-12 md:col-6">
-    <p-fieldset legend="Slice Pipe" [toggleable]="true"> </p-fieldset>
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <!-- Pipe que sirve para cortar un arreglo a nuestro antojo -->
+      <b>Original</b>
+      <pre>{{ clients }}</pre>
+
+      <b>slice:0:2</b>
+      <pre>{{ clients | slice:0:2 }}</pre>
+
+      <b>slice:0:1</b>
+      <pre>{{ clients | slice:0:1 }}</pre>
+
+      <b>slice:0:-1</b>
+      <pre>{{ clients | slice:0:-1 }}</pre>
+
+    </p-fieldset>
   </div>
 
   <div class="col-12 md:col-6">
-    <p-fieldset legend="JSON Pipe" [toggleable]="true"> </p-fieldset>
+    <p-fieldset legend="JSON Pipe" [toggleable]="true">
+      <pre>{{ person | json }}</pre>
+    </p-fieldset>
   </div>
 
   <div class="col-12 md:col-6">
-    <p-fieldset legend="KeyValue Pipe" [toggleable]="true"> </p-fieldset>
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <!-- Pipe que consigue desgranar un JSON en clave-valor para poder mostrarlo de forma entendible -->
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          <b>{{ item.key | titlecase }}: </b>{{ item.value }}
+        </li>
+      </ul>
+    </p-fieldset>
   </div>
 
   <div class="col-12 md:col-6">
-    <p-fieldset legend="Async Pipe" [toggleable]="true"> </p-fieldset>
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+      <!-- Desenvuelve un valor de un primitivo asincrónico -->
+      <pre *ngIf="!(myObservableTimer | async)">Resolviendo observable</pre>
+      <pre>{{ myObservableTimer | async }}</pre>
+
+      <pre *ngIf="!(promiseValue | async)">Resolviendo promesa</pre>
+      <pre>{{ promiseValue | async }}</pre>
+    </p-fieldset>
   </div>
 </div>
