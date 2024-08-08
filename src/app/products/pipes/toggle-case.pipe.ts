@@ -10,3 +10,5 @@ export class ToggleCasePipe implements PipeTransform {
     return ( toUpper ) ? value.toUpperCase() : value.toLowerCase();
   }
 }
+
+
